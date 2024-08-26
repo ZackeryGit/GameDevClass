@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu]
-public class IntData : MonoBehaviour
+public class IntData : ScriptableObject
 {
     public int value;
 
