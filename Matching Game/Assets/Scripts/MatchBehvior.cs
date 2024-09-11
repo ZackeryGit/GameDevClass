@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
@@ -6,13 +7,13 @@ public class MatchBehvior : MonoBehaviour
 {
 
     public ID idObj;
-    public UnityEvent matchEvent, noMatchEvent;
+    public UnityEvent matchEvent, noMatchEvent, noMatchDelayedEvent;
 
-    public void OnTriggerEnter(Collider other){
+    private IEnumerator OnTriggerEnter(Collider other){
 
             // Get other object component, and check if it exists
             var tempObj = other.GetComponent<IDContainerBehavior>();
-            if (tempObj == null) {return;}
+            if (tempObj == null) {yield break;}
 
             var otherID = tempObj.idObj;
 
@@ -20,6 +21,8 @@ public class MatchBehvior : MonoBehaviour
                 matchEvent.Invoke();
             } else {
                 noMatchEvent.Invoke();
+                yield return new WaitForSeconds(0.5f);
+                noMatchDelayedEvent.Invoke();
             }
     }
 }
