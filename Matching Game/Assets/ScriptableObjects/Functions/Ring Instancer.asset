@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6d717c1d37098c429370be41d807cba, type: 3}
-  m_Name: v3 C
+  m_Script: {fileID: 11500000, guid: 7361f97c7cabd5e42bdcf3ad2bdda32f, type: 3}
+  m_Name: Ring Instancer
   m_EditorClassIdentifier: 
-  value: {x: -2, y: 6, z: 0}
+  prefab: {fileID: 8967115607323636422, guid: e75242a6d9e59954496df94b1701fcaf, type: 3}

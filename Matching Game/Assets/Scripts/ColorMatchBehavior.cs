@@ -7,5 +7,11 @@ public class ColorMatchBehavior : MatchBehvior {
     private void Awake(){
         idObj = colorIDListObj.currentColor;
     }
+
+    public void ChangeColor(SpriteRenderer renderer)
+    {
+        var newColor = idObj as ColorID;
+        renderer.color = newColor.value;
+    }
 }
 
