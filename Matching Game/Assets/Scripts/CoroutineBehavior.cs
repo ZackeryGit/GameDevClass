@@ -8,10 +8,13 @@ public class CoroutineBehavior : MonoBehaviour
 {
     public UnityEvent startCountEvent, repeatCountEvent, endCountEvent, repeatUntilFalse;
     public IntData counterNum;
-    public bool canRun;
+    private bool canRun;
     public float seconds = 3.0f;
     private WaitForSeconds wfsObj;
     private WaitForFixedUpdate wffuObj;
+
+    public bool CanRun { get => canRun; set => canRun = value; }
+
     // Start is called before the first frame update
 
     private void Awake()
@@ -42,12 +45,14 @@ public class CoroutineBehavior : MonoBehaviour
     }
 
     public void StartRepeatUntilFalse(){
-        canRun = true;
+        CanRun = true;
         StartCoroutine(RepeatUntilFalse());
     }
 
+
+
     private IEnumerator RepeatUntilFalse(){
-        while(canRun)
+        while(CanRun)
         {
             yield return wfsObj;
             repeatUntilFalse.Invoke();
