@@ -52,10 +52,11 @@ public class CoroutineBehavior : MonoBehaviour
 
 
     private IEnumerator RepeatUntilFalse(){
+        yield return wfsObj;
         while(CanRun)
         {
-            yield return wfsObj;
             repeatUntilFalse.Invoke();
+            yield return wfsObj;
         }
     }
 }

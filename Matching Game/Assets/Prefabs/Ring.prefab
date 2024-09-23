@@ -114,6 +114,7 @@ GameObject:
   - component: {fileID: -7446814099939862439}
   - component: {fileID: -8508678455078340124}
   - component: {fileID: 7967979340361582224}
+  - component: {fileID: -8573041222841733639}
   m_Layer: 7
   m_Name: Ring
   m_TagString: Untagged
@@ -359,3 +360,31 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   colorIDListObj: {fileID: 11400000, guid: d788001a9738ee247b2110cbfd016044, type: 2}
+--- !u!114 &-8573041222841733639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8967115607323636422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4677223fca27ca441930e55d3b857aa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameActionObj: {fileID: 11400000, guid: 87602d70149f09b4686c8ab200c54e59, type: 2}
+  onRaiseEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1399379316678497588}
+        m_TargetAssemblyTypeName: DestroyBehavior, Assembly-CSharp
+        m_MethodName: DestroyInstantly
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
