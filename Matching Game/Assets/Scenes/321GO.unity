@@ -2554,7 +2554,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   counterNum: {fileID: 0}
-  seconds: 1.5
+  seconds: 2
 --- !u!114 &2035135599
 MonoBehaviour:
   m_ObjectHideFlags: 0
