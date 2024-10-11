@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public abstract class CharacterPattern : ScriptableObject
 {
@@ -7,6 +8,12 @@ public abstract class CharacterPattern : ScriptableObject
     public string hAxis = "Horizontal", vAxis = "Vertical";
     public float speed = 10f, gravity = 3f, jumpForce = 30f;
     public int jumpCount = 0, jumpCountMax = 2;
+
+    public float JumpCount
+    {
+        get => jumpCount;
+        set => jumpCount =  Convert.ToInt32(value);
+    }
 
     public float Speed
     {
