@@ -15,8 +15,11 @@ MonoBehaviour:
   inputs: {x: 0, y: 0, z: 0}
   hAxis: Horizontal
   vAxis: Vertical
-  speed: 12
-  gravity: 0.25
-  jumpForce: 30
+  defaultspeed: 15
+  speed: 15
+  gravity: 0.4
+  jumpForce: 45
+  coyoteTimer: 0.15
+  coyoteTime: 0.15
   jumpCount: 0
   jumpCountMax: 2

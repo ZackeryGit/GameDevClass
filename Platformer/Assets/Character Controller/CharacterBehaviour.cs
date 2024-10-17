@@ -30,14 +30,7 @@ public class CharacterBehaviour : MonoBehaviour
     {
         characterPattern = pattern;
     }
-
-    /*public IEnumerator MoveCharacter(){
-        while (canRun == true){
-            characterPattern.Move(controller);
-            yield return waitObj;
-        }
-    }*/
-
+    
     public void LateUpdate()
     {
         if(canRun == true){

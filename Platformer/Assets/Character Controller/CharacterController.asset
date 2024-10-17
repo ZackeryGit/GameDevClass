@@ -15,6 +15,7 @@ MonoBehaviour:
   inputs: {x: 0, y: 0, z: 0}
   hAxis: Horizontal
   vAxis: Vertical
+  defaultspeed: 15
   speed: 15
   gravity: 5
   jumpForce: 1000
