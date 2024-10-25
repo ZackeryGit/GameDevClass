@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 [CreateAssetMenu(menuName = ("Character Patterns/Character Move"))]
 public class CharacterMove2d : CharacterPattern
 {
+
+    public UnityEvent doubleJumpEvent;
 
     public override void Move( CharacterController controller)
     {
@@ -29,7 +32,11 @@ public class CharacterMove2d : CharacterPattern
         if (jumpCount < jumpCountMax && Input.GetButtonDown("Jump"))
         {
             positionDirection.y = jumpForce;
+            if (jumpCount != 0){
+                doubleJumpEvent.Invoke();
+            }
             jumpCount++;
+            
         }
         
         positionDirection.y -= gravity;
