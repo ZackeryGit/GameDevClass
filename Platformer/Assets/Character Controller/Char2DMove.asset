@@ -19,7 +19,22 @@ MonoBehaviour:
   speed: 15
   gravity: 0.4
   jumpForce: 45
-  coyoteTimer: 0.15
+  coyoteTimer: -0.001461193
   coyoteTime: 0.15
-  jumpCount: 0
+  jumpCount: 2
   jumpCountMax: 2
+  doubleJumpEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 9f7fec197d969094eb701d13ae401e37, type: 2}
+        m_TargetAssemblyTypeName: GameAction, Assembly-CSharp
+        m_MethodName: RaiseAction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
