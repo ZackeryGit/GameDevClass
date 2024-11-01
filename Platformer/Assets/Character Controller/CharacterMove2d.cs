@@ -46,6 +46,13 @@ public class CharacterMove2d : CharacterPattern
             positionDirection.x = 0f;
         }
   
-        controller.Move(positionDirection*Time.deltaTime);
+        // Apply movement
+        controller.Move(positionDirection * Time.deltaTime);
+
+        // Freeze Z position by resetting it to a fixed value, e.g., starting position's Z.
+        Vector3 fixedPosition = controller.transform.position;
+        fixedPosition.z = 0; // Set to the desired Z value, like starting Z
+        controller.transform.position = fixedPosition;
+        
     }
 }

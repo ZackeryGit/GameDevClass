@@ -6,11 +6,12 @@ TagManager:
   tags:
   - Checkpoint
   - Death
+  - EnemyPlat
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - EnemyPlat
   - Water
   - UI
   - 
