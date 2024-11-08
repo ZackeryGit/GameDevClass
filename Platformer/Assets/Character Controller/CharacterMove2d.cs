@@ -9,7 +9,7 @@ public class CharacterMove2d : CharacterPattern
 
     public override void Move( CharacterController controller)
     {
-        positionDirection.x = Input.GetAxis("Horizontal")*Speed;
+        positionDirection.x = Input.GetAxis("Horizontal")* speed;
 
         if (controller.isGrounded)
         {
@@ -28,9 +28,10 @@ public class CharacterMove2d : CharacterPattern
             }
 
         }
-        
+
         if (jumpCount < jumpCountMax && Input.GetButtonDown("Jump"))
         {
+            Debug.Log("Jump");
             positionDirection.y = jumpForce;
             if (jumpCount != 0){
                 doubleJumpEvent.Invoke();
@@ -39,12 +40,12 @@ public class CharacterMove2d : CharacterPattern
             
         }
         
-        positionDirection.y -= gravity;
+        positionDirection.y -= gravity * Time.deltaTime;
         
-        if (!Input.anyKey)
-        {
-            positionDirection.x = 0f;
-        }
+        //if (!Input.anyKey)
+        //{
+        //    positionDirection.x = 0f;
+        //}
   
 
         // ChatGPT Code NOT MINE

@@ -17,8 +17,8 @@ MonoBehaviour:
   vAxis: Vertical
   defaultspeed: 15
   speed: 15
-  gravity: 0.4
-  jumpForce: 20
+  gravity: 125
+  jumpForce: 50
   coyoteTimer: 0.15
   coyoteTime: 0.15
   jumpCount: 0

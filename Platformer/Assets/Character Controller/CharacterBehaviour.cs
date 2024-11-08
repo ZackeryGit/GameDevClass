@@ -7,7 +7,6 @@ public class CharacterBehaviour : MonoBehaviour
 {
     private CharacterController controller;
     public CharacterPattern characterPattern;
-    private WaitForFixedUpdate waitObj;
     public UnityEvent awakeEvent, triggerEnterEvent, triggerExitEvent;
     private bool canRun = true;
     public bool CanRun{
@@ -22,7 +21,7 @@ public class CharacterBehaviour : MonoBehaviour
     private void Awake()
     {
         awakeEvent.Invoke();
-        waitObj = new WaitForFixedUpdate();
+        
         controller = GetComponent<CharacterController>();
     }
 
@@ -31,10 +30,11 @@ public class CharacterBehaviour : MonoBehaviour
         characterPattern = pattern;
     }
     
-    public void LateUpdate()
+    public void Update()
     {
         if(canRun == true){
             characterPattern.Move(controller);
+            
         }
     }
     
