@@ -14,5 +14,6 @@ public class AgentBehaviour : MonoBehaviour
     void Update()
     {
         agent.destination = player.position;
+        
     }
 }

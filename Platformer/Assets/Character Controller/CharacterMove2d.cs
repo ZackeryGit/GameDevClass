@@ -46,6 +46,8 @@ public class CharacterMove2d : CharacterPattern
             positionDirection.x = 0f;
         }
   
+
+        // ChatGPT Code NOT MINE
         // Apply movement
         controller.Move(positionDirection * Time.deltaTime);
 

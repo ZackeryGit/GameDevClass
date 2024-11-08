@@ -18,10 +18,10 @@ MonoBehaviour:
   defaultspeed: 15
   speed: 15
   gravity: 0.4
-  jumpForce: 45
-  coyoteTimer: -0.001461193
+  jumpForce: 20
+  coyoteTimer: 0.15
   coyoteTime: 0.15
-  jumpCount: 2
+  jumpCount: 0
   jumpCountMax: 2
   doubleJumpEvent:
     m_PersistentCalls:
