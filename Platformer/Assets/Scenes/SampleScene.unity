@@ -897,7 +897,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 254cd37d2aa72d344aba42eed2b4fc97, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.2509907
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 254cd37d2aa72d344aba42eed2b4fc97, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3398,13 +3398,13 @@ GameObject:
   - component: {fileID: 827445517}
   - component: {fileID: 827445516}
   - component: {fileID: 827445515}
-  - component: {fileID: 827445514}
-  - component: {fileID: 827445520}
   - component: {fileID: 827445521}
   - component: {fileID: 827445522}
   - component: {fileID: 827445523}
   - component: {fileID: 827445524}
   - component: {fileID: 827445525}
+  - component: {fileID: 827445527}
+  - component: {fileID: 827445526}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3412,32 +3412,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!143 &827445514
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 827445513}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 1
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &827445515
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3455,7 +3429,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -3528,28 +3502,6 @@ Transform:
   - {fileID: 2027222099}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &827445520
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 827445513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85644e099d2fa9d40a89dce10e32682b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterPattern: {fileID: 11400000, guid: 91710d6386953b142a4da0d92d088c09, type: 2}
-  awakeEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  triggerEnterEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  triggerExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &827445521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3582,7 +3534,7 @@ MonoBehaviour:
   onDeathEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 827445520}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CharacterBehaviour, Assembly-CSharp
         m_MethodName: set_CanRun
         m_Mode: 6
@@ -3628,7 +3580,7 @@ MonoBehaviour:
   delayedRespawnEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 827445520}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CharacterBehaviour, Assembly-CSharp
         m_MethodName: set_CanRun
         m_Mode: 6
@@ -3683,6 +3635,54 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &827445526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827445513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85644e099d2fa9d40a89dce10e32682b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterPattern: {fileID: 11400000, guid: 91710d6386953b142a4da0d92d088c09, type: 2}
+  awakeEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  triggerEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  triggerExitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!143 &827445527
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827445513}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 1.0000001
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &913072834
 GameObject:
   m_ObjectHideFlags: 0

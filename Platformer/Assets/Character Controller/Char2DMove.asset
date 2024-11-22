@@ -17,11 +17,11 @@ MonoBehaviour:
   vAxis: Vertical
   defaultspeed: 15
   speed: 15
-  gravity: 125
+  gravity: 140
   jumpForce: 50
-  coyoteTimer: 0.15
+  coyoteTimer: -0.0017040849
   coyoteTime: 0.15
-  jumpCount: 0
+  jumpCount: 1
   jumpCountMax: 2
   doubleJumpEvent:
     m_PersistentCalls:
@@ -116,5 +116,5 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onGround: 1
+  onGround: 0
   running: 0
