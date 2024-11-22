@@ -10,6 +10,7 @@ public class CharacterMove2d : CharacterPattern
     public UnityEvent doubleJumpEvent, walkEvent, jumpEvent, landEvent, startRun, endRun, fallEvent;
     public bool onGround = false;
     public bool running = false;
+    private float minfalltime = .05f; // This number makes sure the player is off the ground, and the controller isnt disconnecting from the ground for .001 second
 
     public override void Move( CharacterController controller)
     {
@@ -49,12 +50,12 @@ public class CharacterMove2d : CharacterPattern
         if (controller.isGrounded == true && onGround == false){
             Debug.Log("Land");
             landEvent.Invoke();
-        } else if (controller.isGrounded == false && onGround == true){
+        } else if (controller.isGrounded == false && coyoteTimer <= coyoteTime - minfalltime && onGround == true){
             Debug.Log("Fall");
             fallEvent.Invoke();
         }
 
-        if (controller.isGrounded == true && coyoteTimer > 0){
+        if (coyoteTimer > coyoteTime - minfalltime){
             onGround = true;
         }else {
             onGround = false;
