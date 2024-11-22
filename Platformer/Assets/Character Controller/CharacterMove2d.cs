@@ -1,11 +1,15 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Security.Cryptography.X509Certificates;
+using UnityEngine;
 using UnityEngine.Events;
 
 [CreateAssetMenu(menuName = ("Character Patterns/Character Move"))]
 public class CharacterMove2d : CharacterPattern
 {
 
-    public UnityEvent doubleJumpEvent;
+    public UnityEvent doubleJumpEvent, walkEvent, jumpEvent, landEvent, startRun, endRun, fallEvent;
+    public bool onGround = false;
+    public bool running = false;
 
     public override void Move( CharacterController controller)
     {
@@ -32,6 +36,7 @@ public class CharacterMove2d : CharacterPattern
         if (jumpCount < jumpCountMax && Input.GetButtonDown("Jump"))
         {
             Debug.Log("Jump");
+            jumpEvent.Invoke();
             positionDirection.y = jumpForce;
             if (jumpCount != 0){
                 doubleJumpEvent.Invoke();
@@ -40,8 +45,40 @@ public class CharacterMove2d : CharacterPattern
             
         }
         
+        // Detect Landing
+        if (controller.isGrounded == true && onGround == false){
+            Debug.Log("Land");
+            landEvent.Invoke();
+        } else if (controller.isGrounded == false && onGround == true){
+            Debug.Log("Fall");
+            fallEvent.Invoke();
+        }
+
+        if (controller.isGrounded == true && coyoteTimer > 0){
+            onGround = true;
+        }else {
+            onGround = false;
+        }
+
+        // Detect run stop/start
+        if (running == false && positionDirection.x != 0) {
+            Debug.Log("StartRun");
+            startRun.Invoke();
+        } else if (running == true && positionDirection.x == 0){
+            Debug.Log("StopRun");
+            endRun.Invoke();
+        }
+
+        if (positionDirection.x == 0){
+            running = false;
+        } else {
+            running = true;
+        }
+
+        
         positionDirection.y -= gravity * Time.deltaTime;
         
+
         //if (!Input.anyKey)
         //{
         //    positionDirection.x = 0f;
