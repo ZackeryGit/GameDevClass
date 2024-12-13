@@ -7,14 +7,24 @@ using UnityEngine.Events;
 public class CharacterMove2d : CharacterPattern
 {
 
-    public UnityEvent doubleJumpEvent, walkEvent, jumpEvent, landEvent, startRun, endRun, fallEvent;
+    public UnityEvent doubleJumpEvent, walkEvent, jumpEvent, landEvent, startRun, endRun, fallEvent, leftEvent, rightEvent;
     public bool onGround = false;
     public bool running = false;
+    public string direction = "None";
+
     private float minfalltime = .05f; // This number makes sure the player is off the ground, and the controller isnt disconnecting from the ground for .001 second
 
     public override void Move( CharacterController controller)
     {
         positionDirection.x = Input.GetAxis("Horizontal")* speed;
+        // Get player direction (left or right)
+        if (Input.GetKeyDown(KeyCode.D) && direction != "Right"){
+            rightEvent.Invoke();
+            direction = "Right";
+        } else if (Input.GetKeyDown(KeyCode.A) && direction != "Left"){
+            leftEvent.Invoke();
+            direction = "Left";
+        }
 
         if (controller.isGrounded)
         {
